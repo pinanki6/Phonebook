@@ -1,0 +1,33 @@
+<div class="login">
+  <div class="container">
+    <h2>PhoneBook</h2>
+
+
+<br/>
+    <h3>Already added contacts </h3>
+    <table class="table table-striped">
+      <tr>
+        <th>First Name</th>
+	    	<th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email-ID</th>
+        <th>Edit</th>
+        <th>Remove</th>
+      </tr>
+      <tr *ngFor="let x of userlist">
+        <td>{{x.fnm}}</td>
+        <td>{{x.lnm}}</td>
+        <td>{{x.phn}}</td>
+        <td>{{x.emid}}</td>
+		<td><input type="button" name="s1" (click)="onedit()" value="Edit"></td>
+    <td class="invert">
+      <div class="rem">
+          <div class="close2" (click)="ondel(x._id)"> </div>
+      </div>
+
+    </td>
+      </tr>
+    </table>
+
+  </div>
+</div>

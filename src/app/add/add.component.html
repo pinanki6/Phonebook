@@ -1,0 +1,24 @@
+<div class="login">
+  <div class="container" align="center">
+
+    <h1>Create New Contact</h1>
+
+    <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+
+        <input type="text" placeholder="First Name"  name="fn" [(ngModel)]="fnm">
+        <input type="text" placeholder="Last Name" name="ln" [(ngModel)]="lnm"><br/>
+        <input type="text" placeholder="Phone Number" required pattern="^[6-9]\d{9}$" name="pn" [(ngModel)]="phn" #txt="ngModel"><br/>
+          <span class="error" *ngIf ="txt.touched && txt.invalid && txt.errors.required">Phone Number cannot be blank </span>
+          <span class="error" *ngIf ="txt.touched && txt.invalid && txt.errors.pattern">Enter Valid Phone Number </span>
+
+        <input type="text" placeholder="Email Address" required pattern="^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" name="em" [(ngModel)]="emid" #txtemid="ngModel"><br/>
+          <span class="error" *ngIf ="txtemid.touched && txtemid.invalid && txtemid.errors.required">Email Id cannot be blank</span>
+          <span class="error" *ngIf ="txtemid.touched && txtemid.invalid && txtemid.errors.pattern">Enter Valid Email-Id</span>
+
+        <input type="submit" name="s2" value="Save" (click)="ons2click()"><br/>
+        <br/>
+        {{msg}}
+     </div>
+    </div>
+  </div>
+
